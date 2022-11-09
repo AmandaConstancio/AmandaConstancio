@@ -1,10 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { RootNavigation } from "./src/navegation/index";
+import { GPRootNavigation } from "./src/navegation";
+
 
 export default function App() {
   return (
     <NavigationContainer>
-      <RootNavigation />
+      <GPRootNavigation />
     </NavigationContainer>
   );
 }

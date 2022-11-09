@@ -1,76 +1,67 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { PaginaInicial} from "../screens/paginainicial";
+//import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Sobre } from "../screens/sobre";
-import { Produtos } from "../screens/produtos";
-import { Registro } from "../screens/registro";
-import { Noticias } from "../screens/noticias";
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Paginicial } from "../screens/Paginainicial";
+import { Produtos } from "../screens/Produtos";
+
+import { Contato } from "../screens/Contato";
+import { noticia } from "../screens/Noticias";
 
 
-// // Simboliza a instância do Stack
-// const Stack = createNativeStackNavigator();
-// Simboliza a instância do Stack
-const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
 const MBNav = createMaterialBottomTabNavigator();
 
-// Componente base
-export const RootNavigation = () => {
-    return (
-        <MBNav.Navigator
-            activeColor="#fff"
-            inactiveColor="rgba(255,255,255,0.5)"
-        >
-            <MBNav.Screen
-                name="PaginaInicial"
-                component={PaginaInicial}
-                options={{
-                    tabBarLabel: 'Página Inicial',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                    ),
-                }}
-            />
-            <MBNav.Screen
-                name="Sobre"
-                component={Sobre}
-                options={{
-                    tabBarLabel: 'Sobre',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="account" color={color} size={26} />
-                    ),
-                }}
-            />
-            <MBNav.Screen
-                name="Produtos"
-                component={Sobre}
-                options={{
-                    tabBarLabel: 'Produtos',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="phone" color={color} size={26} />
-                    ),
-                }}
-            />
-            <MBNav.Screen
-                name="Registro"
-                component={Register}
-                options={{
-                    tabBarLabel: 'Registro',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="android" color={color} size={26} />
-                    ),
-                }}
-            />
-            <MBNav.Screen
-                name="Notícias"
-                component={Login}
-                options={{
-                    tabBarLabel: 'Login',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="account" color={color} size={26} />
-                    ),
-                }}
-            />
-        </MBNav.Navigator>
-    )
+export const GPRootNavigation = () => {
+  return (
+    <MBNav.Navigator activeColor="white" inactiveColor="gray" barStyle={{ backgroundColor: "black"}}>
+      <MBNav.Screen
+        name="Página Inicial"
+        component={Paginicial}
+        options={{
+          tabBarLabel: "Página Inicial",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="chart-tree" color={color} size={25} />
+          ),
+        }}
+      />
+      <MBNav.Screen
+        name="Produtos"
+        component={Produtos}
+        options={{
+          tabBarLabel: "Produtos",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="google-fit" color={color} size={25} />
+          ),
+        }}
+      />
+        <MBNav.Screen
+        name="Contato"
+        component={Contato}
+        options={{
+          tabBarLabel: "Contato",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="cellphone" color={color} size={25} />
+          ),
+        }}
+      />
+       <MBNav.Screen
+        name="Sobre"
+        component={Sobre}
+        options={{
+          tabBarLabel: "Sobre",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="chart-bubble" color={color} size={25} />
+          ),
+        }}
+      /> 
+      
+    </MBNav.Navigator>
+  );
+};
+
+const color = {
+  color: "white"
 }
